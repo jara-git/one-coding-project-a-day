@@ -1,0 +1,53 @@
+$font-stack: 'Roboto',
+sans-serif;
+$primary-color: rgb(1, 45, 4);
+$secundary-color: rgb(59, 86, 145);
+$light-grey: #EAEAEA;
+$med-green: rgb(66, 94, 75);
+$font-title: 'Pacifico',
+cursive;
+
+.cancelbtn,
+.signupbtn {
+    cursor: pointer;
+    margin-top: 2rem;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    color: #fff;
+    background-color: $secundary-color;
+    border-color: $secundary-color;
+    opacity: 0.9;
+
+    &:hover {
+        opacity: 1;
+    }
+
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    background-color: #f44336;
+    border: transparent;
+    margin-right: 2rem;
+}
+
+/* Clear floats */
+.clearfix {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: min-content;
+    padding-bottom: 2rem;
+
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}

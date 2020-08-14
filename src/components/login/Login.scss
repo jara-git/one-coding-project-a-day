@@ -1,31 +1,46 @@
-$font-stack: Helvetica,
+$font-stack: 'Roboto',
 sans-serif;
-$primary-color: #333;
+$primary-color: rgb(1, 45, 4);
 $secundary-color: rgb(59, 86, 145);
 $light-grey: #EAEAEA;
+$med-green: rgb(66, 94, 75);
+$font-title: 'Pacifico',
+cursive;
 
 body {
     font: 100% $font-stack;
-    // color: $primary-color;
+    color: $primary-color;
+    background-color: $med-green;
+
 
     .login {
         color: $primary-color;
         display: flex;
         flex-direction: column;
         align-content: center;
+        border-radius: 0.5rem;
     }
 
     .container {
         margin-top: 120px;
         max-width: 600px;
         height: 320px;
-        border: 3px solid $secundary-color;
+        // border: 3px solid $primary-color;
         border-radius: 0.5rem;
-        background-color: $light-grey;
+        box-shadow: 10px 10px 70px 3px rgba(155, 245, 221, 0.64);
+        background-color: rgba(white, .7);
         height: min-content;
+        display: block;
+        position: relative;
 
-        .email, .password {
-            color: $secundary-color;
+        .title {
+            font: 100% $font-title;
+            font-size: 3rem;
+        }
+
+        .email,
+        .password {
+            color: $primary-color;
         }
 
         .button {
@@ -40,10 +55,29 @@ body {
             color: #fff;
             background-color: $secundary-color;
             border-color: $secundary-color;
+            opacity: 0.9;
+
+            &:hover {
+                opacity: 1;
+            }
         }
 
         .newuser {
             padding-bottom: 2rem;
         }
     }
+
+    .container::after {
+        content: "";
+        background-image: url("https://skitterphoto.com/photos/skitterphoto-7214-default.jpg");
+        border-radius: 0.5rem;
+        opacity: 0.5;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
 }

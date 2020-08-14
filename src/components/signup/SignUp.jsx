@@ -1,42 +1,102 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from "yup";
+import "./Signup.scss";
+
+const signupSchema = Yup.object().shape({
+    firstName: Yup.string().max(15, "must be maximun 15 characters")
+        .required("Required"),
+    lastName: Yup.string().max(15, "must be maximun 15 characters")
+        .required("Required"),
+    email: Yup.string().email("Invalid email address")
+        .required("Required"),
+    password: Yup.string()
+        .required("Required")
+        .min(8, 'at least 8 characters')
+        .matches(/[a-zA-Z]+[^a-zA-Z\s]+/, 'at least 1 number or special char (@,!,#, etc).')
+})
 
 const SignUp = () => {
     return (
-        <div>Sign Up</div>
+        <div className="signup container">
+            <h1 className="text-center pt-5 title">Sign Up</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr></hr>
+            <div className="form-group">
+                <Formik
+                    initialValues={
+                        {
+                            firstName: "",
+                            lastName: "",
+                            email: "",
+                            password: "",
+                        }
+                    }
+                    validationSchema={signupSchema}
+                    onSubmit={
+                        async values => {
+                            await new Promise(response => setTimeout(response, 500));
+                            alert(JSON.stringify(values, null, 2))
+                        }
+                    }
+                >
+                    <Form>
+                        <label className="form-control-plaintext firstname" htmlfFor="firstName"><b>First Name</b></label>
+                        <Field
+                            id="first name"
+                            name="first name"
+                            placeholder="Enter your first name, please"
+                            type="text"
+                        />
+                        <label className="form-control-plaintext lastname" htmlfFor="lastName"><b>Last Name</b></label>
+                        <Field
+                            id="last name"
+                            name="last name"
+                            placeholder="Enter your last name, please"
+                            type="text"
+                            required
+                        />
+                        <label className="form-control-plaintext email" htmlfFor="email"><b>Email</b></label>
+                        <Field
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email, please"
+                            type="email"
+                            required
+                        />
+                        <label className="form-control-plaintext psw" htmlFor="psw"><b>Password</b></label>
+                        <Field
+                            name="psw"
+                            placeholder="Enter Password"
+                            type="password"
+                            required
+                        />
+                        <label className="form-control-plaintext rpsw" htmlFor="psw-repeat"><b>Repeat Password</b></label>
+                        <Field
+                            type="password"
+                            placeholder="Repeat Password"
+                            name="psw-repeat"
+                            required
+                        />
+                        <label className="form-control-plaintext check">
+                            <Field
+                                type="checkbox"
+                                checked=""
+                                name="remember"
+                            />
+                        Remember me
+                        </label>
+                        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+                        <div class="clearfix">
+                            <button type="button" class="cancelbtn">Cancel</button>
+                            <button type="submit" class="signupbtn">Sign Up</button>
+                        </div>
+
+                    </Form>
+                </Formik>
+            </div>
+        </div>
     )
 
 }
 export default SignUp;
-
-// const validate = values => {
-//     const errors = {};
-//     if (!values.firstName) {
-//         errors.firstName = 'Required';
-//     } else if (values.firstName.length > 15) {
-//         errors.firstName = 'Must be 15 characters or less';
-//     }
-
-//     if (!values.lastName) {
-//         errors.lastName = 'Required';
-//     } else if (values.lastName.length > 20) {
-//         errors.lastName = 'Must be 20 characters or less';
-//     }
-
-//     if (!values.email) {
-//         errors.email = 'Required';
-//     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-//         errors.email = 'Invalid email address';
-//     }
-//     const passwordRegex = /(?=.*[0-9])/;
-//     if (!values.password) {
-//         errors.password = 'Required';
-//     } else if (values.password.length < 8) {
-//         errors.password = 'Must be 8 characters long';
-//     } else if (!passwordRegex.test(values.password)) {
-//         errors.password = "Invalid password. Must contain one number";
-//     }
-
-//     return errors;
-// };

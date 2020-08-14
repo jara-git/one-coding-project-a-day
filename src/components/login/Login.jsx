@@ -8,9 +8,14 @@ import "./Login.scss";
 
 
 const loginSchema = Yup.object().shape({
-    email: Yup.string().email(),
-    password: Yup.string(),
+    email: Yup.string().email("Invalid email address")
+        .required("Required"),
+    password: Yup.string()
+        .required("Required")
+        .min(8, 'at least 8 characters')
+        .matches(/[a-zA-Z]+[^a-zA-Z\s]+/, 'at least 1 number or special char (@,!,#, etc).')
 })
+
 
 const Login = () => (
     <div className="login container">

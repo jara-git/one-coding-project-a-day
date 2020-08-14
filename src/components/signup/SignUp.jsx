@@ -1,3 +1,15 @@
+import React from 'react';
+import { Formik, Form, Field } from 'formik';
+import * as Yup from "yup";
+
+const SignUp = () => {
+    return (
+        <div>Sign Up</div>
+    )
+
+}
+export default SignUp;
+
 // const validate = values => {
 //     const errors = {};
 //     if (!values.firstName) {

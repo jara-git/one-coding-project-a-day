@@ -1,8 +1,49 @@
-$font-stack:    Helvetica, sans-serif;
+$font-stack: Helvetica,
+sans-serif;
 $primary-color: #333;
 $secundary-color: rgb(59, 86, 145);
+$light-grey: #EAEAEA;
 
 body {
-  font: 100% $font-stack;
-  color: $primary-color;
+    font: 100% $font-stack;
+    // color: $primary-color;
+
+    .login {
+        color: $primary-color;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .container {
+        margin-top: 120px;
+        max-width: 600px;
+        height: 320px;
+        border: 3px solid $secundary-color;
+        border-radius: 0.5rem;
+        background-color: $light-grey;
+        height: min-content;
+
+        .email, .password {
+            color: $secundary-color;
+        }
+
+        .button {
+            cursor: pointer;
+            margin-top: 2rem;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            color: #fff;
+            background-color: $secundary-color;
+            border-color: $secundary-color;
+        }
+
+        .newuser {
+            padding-bottom: 2rem;
+        }
+    }
 }

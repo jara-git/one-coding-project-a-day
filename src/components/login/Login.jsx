@@ -1,11 +1,9 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
-import * as EmailValidator from 'email-validator';
 import * as Yup from "yup";
 import { Link, Redirect } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Login.scss";
-import { Button } from 'react-bootstrap';
 
 
 
@@ -15,8 +13,8 @@ const loginSchema = Yup.object().shape({
 })
 
 const Login = () => (
-    <div className="login">
-        <h1>Log in</h1>
+    <div className="login container">
+        <h1 class="text-center pt-5">Login</h1>
         <div className="form-group">
             <Formik
                 initialValues={
@@ -34,22 +32,26 @@ const Login = () => (
                 }
             >
                 <Form>
-                    <label htmlFor="email">Email</label>
+                    <label class="form-control-plaintext email" htmlFor="email">Email</label>
                     <Field
                         id="email"
                         name="email"
                         placeholder="Enter your email, please"
                         type="email"
                     />
-                    <label class="form-control" htmlFor="password">Password</label>
+                    <label class="form-control-plaintext password" htmlFor="password">Password</label>
                     <Field id="password" name="password" type="password" placeholder="Enter your password" />
-                    <Button class="btn btn-primary" type="submit">Submit</Button>
+                    <div>
+                        <button class="button" type="submit">Submit</button>
+                    </div>
                 </Form>
             </Formik>
         </div>
-
-        <div>
-            <span>New user? Sign up now!</span>
+        <div class="newuser">
+            <span class="text-info">
+                New user?
+                <a href="#/">Sign up now!</a>
+            </span>
         </div>
     </div>
 )

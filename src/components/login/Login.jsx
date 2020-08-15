@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from "yup";
-import { Link, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Redirect } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Login.scss";
 
@@ -59,7 +59,9 @@ const Login = () => (
         <div class="newuser">
             <span class="text-info">
                 New user?
-                <a href="#/">Sign up now!</a>
+                <Router>
+                <Link to="/signup">Sign up now!</Link>
+                </Router>
             </span>
         </div>
     </div>

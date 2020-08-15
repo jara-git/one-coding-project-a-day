@@ -23,9 +23,8 @@ body {
 
     .container {
         margin-top: 120px;
-        max-width: 600px;
+        max-width: 580px;
         height: 320px;
-        // border: 3px solid $primary-color;
         border-radius: 0.5rem;
         box-shadow: 10px 10px 70px 3px rgba(155, 245, 221, 0.64);
         background-color: rgba(white, .7);
@@ -33,9 +32,32 @@ body {
         display: block;
         position: relative;
 
+        @media only screen and (max-width: 568px) {
+            /* styles for mobile browsers smaller than 568px; (iPhone5) */
+            width: 90%;
+        }
+        @media only screen and (max-width: 665px) {
+            /* styles for mobile browsers smaller than 568px; (iPhone5) */
+            width: 90%;
+        }
+
         .title {
             font: 100% $font-title;
             font-size: 3rem;
+        }
+
+        #firstName,
+        #lastName,
+        #email,
+        #password,
+        #reapeatPassword {
+            width: 20rem;
+
+            @media only screen and (max-device-width: 480px) {
+                /* styles for mobile browsers smaller than 480px; (iPhone) */
+                width: 15rem;
+            }
+
         }
 
         .email,

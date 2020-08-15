@@ -47,7 +47,7 @@ const SignUp = () => {
                             <Form>
                                 <label className="form-control-plaintext firstname" htmlfFor="firstName"><b>First Name</b></label>
                                 <Field
-                                    id="first name"
+                                    id="firstName"
                                     name="firstName"
                                     placeholder="Enter your first name, please"
                                     type="text"
@@ -61,7 +61,7 @@ const SignUp = () => {
                                 }
                                 <label className="form-control-plaintext lastname" htmlfFor="lastName"><b>Last Name</b></label>
                                 <Field
-                                    id="last name"
+                                    id="lastName"
                                     name="lastName"
                                     placeholder="Enter your last name, please"
                                     type="text"
@@ -92,6 +92,7 @@ const SignUp = () => {
                                 <label className="form-control-plaintext psw" htmlFor="password"><b>Password</b></label>
                                 <Field
                                     name="password"
+                                    id="password"
                                     placeholder="Enter Password"
                                     type="password"
                                     required
@@ -106,6 +107,7 @@ const SignUp = () => {
                                 <label className="form-control-plaintext rpsw" htmlFor="repeatPassword"><b>Repeat Password</b></label>
                                 <Field
                                     type="password"
+                                    id="reapeatPassword"
                                     placeholder="Repeat Password"
                                     name="repeatPassword"
                                     required

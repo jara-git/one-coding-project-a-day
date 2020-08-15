@@ -19,8 +19,8 @@ cursive;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     color: #fff;
     background-color: $secundary-color;
-    border-color: $secundary-color;
-    opacity: 0.9;
+    // border-color: transparent;
+    opacity: 0.85;
 
     &:hover {
         opacity: 1;
@@ -31,7 +31,6 @@ cursive;
 /* Extra styles for the cancel button */
 .cancelbtn {
     background-color: #f44336;
-    border: transparent;
     margin-right: 2rem;
 }
 

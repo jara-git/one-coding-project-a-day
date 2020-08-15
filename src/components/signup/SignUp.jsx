@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from "yup";
 import "./Signup.scss";
 
@@ -30,6 +30,8 @@ const SignUp = () => {
                             lastName: "",
                             email: "",
                             password: "",
+                            repeatPassword: "",
+                            checkbox: false,
                         }
                     }
                     validationSchema={signupSchema}
@@ -40,59 +42,99 @@ const SignUp = () => {
                         }
                     }
                 >
-                    <Form>
-                        <label className="form-control-plaintext firstname" htmlfFor="firstName"><b>First Name</b></label>
-                        <Field
-                            id="first name"
-                            name="first name"
-                            placeholder="Enter your first name, please"
-                            type="text"
-                        />
-                        <label className="form-control-plaintext lastname" htmlfFor="lastName"><b>Last Name</b></label>
-                        <Field
-                            id="last name"
-                            name="last name"
-                            placeholder="Enter your last name, please"
-                            type="text"
-                            required
-                        />
-                        <label className="form-control-plaintext email" htmlfFor="email"><b>Email</b></label>
-                        <Field
-                            id="email"
-                            name="email"
-                            placeholder="Enter your email, please"
-                            type="email"
-                            required
-                        />
-                        <label className="form-control-plaintext psw" htmlFor="psw"><b>Password</b></label>
-                        <Field
-                            name="psw"
-                            placeholder="Enter Password"
-                            type="password"
-                            required
-                        />
-                        <label className="form-control-plaintext rpsw" htmlFor="psw-repeat"><b>Repeat Password</b></label>
-                        <Field
-                            type="password"
-                            placeholder="Repeat Password"
-                            name="psw-repeat"
-                            required
-                        />
-                        <label className="form-control-plaintext check">
-                            <Field
-                                type="checkbox"
-                                checked=""
-                                name="remember"
-                            />
+                    {
+                        ({ errors, values, touched }) => (
+                            <Form>
+                                <label className="form-control-plaintext firstname" htmlfFor="firstName"><b>First Name</b></label>
+                                <Field
+                                    id="first name"
+                                    name="firstName"
+                                    placeholder="Enter your first name, please"
+                                    type="text"
+                                />
+                                {
+                                    errors.firstName ? (
+                                        <div>
+                                            {errors.firstName}
+                                        </div>
+                                    ) : null
+                                }
+                                <label className="form-control-plaintext lastname" htmlfFor="lastName"><b>Last Name</b></label>
+                                <Field
+                                    id="last name"
+                                    name="lastName"
+                                    placeholder="Enter your last name, please"
+                                    type="text"
+                                    required
+                                />
+                                {
+                                    errors.lastName ? (
+                                        <div>
+                                            {errors.lastName}
+                                        </div>
+                                    ) : null
+                                }
+                                <label className="form-control-plaintext email" htmlfFor="email"><b>Email</b></label>
+                                <Field
+                                    id="email"
+                                    name="email"
+                                    placeholder="Enter your email, please"
+                                    type="email"
+                                    required
+                                />
+                                {
+                                    errors.email ? (
+                                        <div>
+                                            {errors.email}
+                                        </div>
+                                    ) : null
+                                }
+                                <label className="form-control-plaintext psw" htmlFor="password"><b>Password</b></label>
+                                <Field
+                                    name="password"
+                                    placeholder="Enter Password"
+                                    type="password"
+                                    required
+                                />
+                                {
+                                    errors.password ? (
+                                        <div>
+                                            {errors.password}
+                                        </div>
+                                    ) : null
+                                }
+                                <label className="form-control-plaintext rpsw" htmlFor="repeatPassword"><b>Repeat Password</b></label>
+                                <Field
+                                    type="password"
+                                    placeholder="Repeat Password"
+                                    name="repeatPassword"
+                                    required
+                                />
+                                {
+                                    values.repeatPassword !== values.password && touched.repeatPassword ? (
+                                        <div>
+                                            must be the same value as password
+                                        </div>
+                                    ) : null
+                                }
+                                <label className="form-control-plaintext check">
+                                    <Field
+                                        type="checkbox"
+                                        checked={values.checkbox}
+                                        name="checkbox"
+                                        value="false"
+                                    />
                         Remember me
                         </label>
-                        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-                        <div class="clearfix">
-                            <button type="button" class="cancelbtn">Cancel</button>
-                            <button type="submit" class="signupbtn">Sign Up</button>
-                        </div>
+                                <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+                                <div class="clearfix">
+                                    <button type="button" class="cancelbtn">Cancel</button>
+                                    <button type="submit" class="signupbtn">Sign Up</button>
+                                </div>
 
-                    </Form>
+                            </Form>
+                        )
+                    }
                 </Formik>
             </div>
         </div>

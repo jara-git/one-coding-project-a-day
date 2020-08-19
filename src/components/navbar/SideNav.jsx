@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
-const Nav = () => {
+const SideNav = () => {
     return (
         <div>
+        Menu
         </div>
     )
 }
-export default Nav;
+export default SideNav;

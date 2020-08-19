@@ -1,5 +1,70 @@
-.siteHeader {
+.site-header {
     display: flex;
     justify-content: space between;
     position: fixed;
+    background-color: tomato;
+    top: 0;
+    
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 10;
+    
+    .brand-icon a{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        letter-spacing: 5px;
+        text-decoration: none;
+    }
+    .brand-icon .icon-img {
+        display: inline-flex;
+        height: 3rem;
+        width: 3rem;
+        font-size: 2rem;
+        justify-content: center;
+        align-items: center;       
+    }
+    .menu-trigger {
+        display: inline-flex;
+        flex-direction: column;
+        height: 3rem;
+        width: 3rem;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        position: relative;
+        padding: 10px;
+        cursor: pointer;
+        span {
+            display: inline-flex;
+            width: 30px;
+            height: 40px;
+            border-radius: 16px;
+            background-color: #efefef;
+            transition: all ease .5s;
+        }
+        .menu-close {
+            span {
+                position: absolute;
+                background-color: #efefef;
+                &:nth-child(1){
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2){
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                }
+                &:nth-child(3){
+                    transform: rotate(-45deg);
+                }
+
+            }
+
+        }
+    }
 }

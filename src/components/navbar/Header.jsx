@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "./Header.scss";
 
 
 // Header component triggers/ hides the sidebar
@@ -9,11 +10,11 @@ import { Link } from "react-router-dom";
 const Header = (props) => {
     const {menuState, setMenuState} = props;
     return (
-        <header>
+        <header class="site-header">
             <div className="brand-icon">
             <Link to="/">
                 <div className="icon">
-                <img 
+                <img className="icon-img"
                     src="https://s7.gifyu.com/images/1-project-a-day-favicon2-02-removebg-preview.png"
                     alt="project logo"
                 />

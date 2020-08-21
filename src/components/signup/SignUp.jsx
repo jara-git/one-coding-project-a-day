@@ -18,7 +18,8 @@ const signupSchema = Yup.object().shape({
 
 const SignUp = () => {
     return (
-        <div className="signup container">
+        <div className="signup">
+            <div className="container">
             <h1 className="text-center pt-5 title">Sign Up</h1>
             <p>Please fill in this form to create an account.</p>
             <hr></hr>
@@ -140,6 +141,7 @@ const SignUp = () => {
                 </Formik>
             </div>
         </div>
+        </div> 
     )
 
 }

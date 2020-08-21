@@ -1,0 +1,191 @@
+// $font-stack: 'Roboto',
+// sans-serif;
+// $primary-color: rgb(1, 45, 4);
+// $secundary-color: rgb(59, 86, 145);
+// $light-grey: #EAEAEA;
+// $med-green: rgb(66, 94, 75);
+$font-title: 'Pacifico',
+cursive;
+$font-stack: 'Roboto',
+sans-serif;
+$morning-blue: #779C96ff;
+$primary-color: #1D4D4Fff;
+$dark-olive-green:  #6B6D3Aff;
+$light-grey: #EAEAEA;
+$med-green: rgb(66, 94, 75);
+$brown-sugar: #B36B49ff;
+$camel: #BB8949ff;
+
+
+
+  // sidebar navigation
+  
+  .sidebar-navigation-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    // left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    color: $camel;
+    align-content: center;
+    justify-content: center;
+    background-color: transparent;
+    z-index: 8;
+  }
+  
+  .menu-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    z-index: 9;
+    width: 200px;
+    right: 0;
+    overflow: hidden;
+  }
+  
+  .menu-layer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    // right: 0;
+    margin: auto;
+    display: flex;
+    height: 100%;
+    width: 220px;
+    background-color: $dark-olive-green;
+    z-index: -1;
+  }
+  
+  .sidebar-navigation {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    position: relative;
+    width: 220px;
+    height: 100%;
+    background-color: $primary-color;
+    padding-top: 50px;
+    box-shadow: 0px 0px 4px $primary-color;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
+  
+    .sidebar-top {
+      overflow: hidden;
+      display: flex;
+      height: calc(100% - 260px);
+    }
+    .link-wrapper {
+      align-items: left;
+      overflow: hidden;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      flex-basis: 100%;
+      flex-shrink: 0;
+      .menu-link {
+        padding: 16px;
+        display: flex;
+        color: $morning-blue;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 500;
+        background-color: ($primary-color, 0.3);
+        text-decoration: none;
+        width: 100px;
+        &:hover {
+          color: lighten($primary-color, 10%);
+        }
+      }
+    }
+  }
+  .sidebar-bottom {
+      align-items: left;
+    .link-sub {
+        font-size: .8rem;
+    }
+    .link-title {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    text-align: left;
+    color: $brown-sugar;
+    a {
+        color: $brown-sugar;
+    }
+      
+    ul {
+        list-style-type: none;
+        
+    }
+    .extra-links {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      list-style-type: none;
+      
+      .link-item {
+        list-style-type: none;
+        display: inline-flex;
+        flex-direction: column;
+        justify-items: flex-start;
+        margin: 8px 16px;
+        color: darken(#efefef, 30%);
+        
+        a {
+          color: darken(#efefef, 30%);
+          &:hover {
+            color: #efefef;
+          }
+        }
+        .link-title {
+          font-weight: 700;
+          color: #efefef;
+          text-transform: uppercase;
+          font-size: 0.85rem;
+          letter-spacing: 2px;
+          margin-bottom: 4px;
+          color: #efefef;
+          list-style: none;
+        }
+    
+        // .social-media-links {
+        //   display: flex;
+        //   justify-content: flex-start;
+        //   a {
+        //     height: 30px;
+        //     width: 30px;
+        //     border: 1px solid;
+        //     display: inline-flex;
+        //     justify-content: center;
+        //     align-items: center;
+        //     border-radius: 4px;
+        //     margin-right: 8px;
+        //     &:hover {
+        //       color: $primary-color;
+        //       background-color: #efefef;
+        //     }
+        //   }
+        // }
+    }
+
+    }
+  }
+  
+  .page {
+    padding-top: 50px;
+    background-color: $morning-blue;
+    width: 100vw;
+    height: 100vh
+  }

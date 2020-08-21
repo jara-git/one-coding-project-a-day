@@ -1,12 +1,36 @@
-$font-stack: 'Roboto',
-sans-serif;
-$primary-color: rgb(1, 45, 4);
-$secundary-color: rgb(59, 86, 145);
-$light-grey: #EAEAEA;
-$med-green: rgb(66, 94, 75);
+// 
 $font-title: 'Pacifico',
 cursive;
+$font-stack: 'Roboto',
+sans-serif;
+$morning-blue: #779C96ff;
+$primary-color: #1D4D4Fff;
+$dark-olive-green:  #6B6D3Aff;
+$light-grey: #EAEAEA;
+$med-green: rgb(66, 94, 75);
+$brown-sugar: #B36B49ff;
+$camel: #BB8949ff;
 
+.signup {
+    color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-color: $med-green;
+    height: 100vh;
+}
+.container {
+   
+    margin-top: 120px;
+    max-width: 580px;
+    height: 320px;
+    border-radius: 0.5rem;
+    box-shadow: 10px 10px 70px 3px rgba(155, 245, 221, 0.64);
+    background-color: rgba(white, .7);
+    height: min-content;
+    display: block;
+    position: relative;
+}
 .cancelbtn,
 .signupbtn {
     cursor: pointer;
@@ -18,7 +42,7 @@ cursive;
     border-radius: .25rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     color: #fff;
-    background-color: $secundary-color;
+    background-color: $morning-blue;
     // border-color: transparent;
     opacity: 0.85;
 

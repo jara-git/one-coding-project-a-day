@@ -14,13 +14,12 @@ function App() {
       <Router>
         <div className="App container-app" >
         <Header menuState={menuState} setMenuState={setMenuState}/>
-        <SideNav />
+        <SideNav menuState={menuState} setMenuState={setMenuState} />
         <Routes />
         </div>
       </Router>
-
-      <Login />
-      <SignUp />
+      {/* <Login />
+      <SignUp /> */}
     </div>
     
   );

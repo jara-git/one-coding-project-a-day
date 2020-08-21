@@ -5,6 +5,7 @@ import SignUp from "./components/signup/SignUp";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
+import Projects from "./components/projects/Projects";
 
 const Routes = ()=>{
   return(
@@ -14,6 +15,7 @@ const Routes = ()=>{
             <Route path="/login" component={Login} />
             <Route path="/signup" component={SignUp} />
             <Route path="/about" component={About} />
+            <Route path="/projects" component={Projects} />
             <Route path="/contact" component={Contact} />
         </Switch>
     </div>

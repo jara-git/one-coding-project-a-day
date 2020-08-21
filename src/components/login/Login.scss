@@ -18,7 +18,9 @@ body {
         display: flex;
         flex-direction: column;
         align-content: center;
-        border-radius: 0.5rem;
+        background-color: $med-green;
+        height: 100vh;
+        
     }
 
     .container {

@@ -18,7 +18,9 @@ const loginSchema = Yup.object().shape({
 
 
 const Login = () => (
-    <div className="login container">
+    <div className="login">
+        <div className="container">
+           
         <h1 className="text-center pt-5 title">Login</h1>
         <div className="form-group">
             <Formik
@@ -63,6 +65,7 @@ const Login = () => (
                 <Link to="/signup">Sign up now!</Link>
                 </Router>
             </span>
+        </div> 
         </div>
     </div>
 )
